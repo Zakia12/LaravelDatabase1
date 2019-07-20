@@ -29,13 +29,13 @@ class HomeController extends Controller
     }
     public function about()
     {
-        //$user = $user = Auth::user();
-        $user = User::find (2);
 
-        $user->name = 'Steve Joe';
-        $user->delete();
         $users= User::all();
-        //dd ($user);
+
+        //$users = User::where('id', 1)
+
+        dd($users->count());
+
         return view('about', ['users'=> $users]);
     }
 }
