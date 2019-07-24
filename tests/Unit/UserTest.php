@@ -24,4 +24,11 @@ class Example1Test extends TestCase
         $user = User::find(1);
         $this->assertInternalType('int', $user->id);
     }
+
+    public function testBasicTest3()
+    {
+        $user = User::inRandomOrder()->first();
+        $this->assertInternalType('int', $user->id);
+        $this->assertInstanceOf('App\User', $user);
+    }
 }
