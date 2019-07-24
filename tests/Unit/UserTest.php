@@ -55,5 +55,19 @@ class StackTest extends TestCase
 
         return $stack;
     }
+}
 
+class MultipleDependenciesTest extends TestCase
+{
+    public function testProducerFirst()
+    {
+        $this->assertTrue(true);
+        return 'first';
+    }
+
+    public function testProducerSecond()
+    {
+        $this->assertTrue(true);
+        return 'second';
+    }
 }
